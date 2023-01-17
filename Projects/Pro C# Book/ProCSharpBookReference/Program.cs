@@ -1,5 +1,6 @@
 ﻿using CoreCSharp;
 using System;
+using System.Collections.Generic;
 using System.Numerics;
 // using static System.Console; // by this command you can get rid of using Console.WriteLine() instead you cam use WriteLine();
 
@@ -128,22 +129,31 @@ namespace CoreCSharp
             {
                 int i = 100;
                 string s = i.ToString();
-                Console.WriteLine(s.GetType() + "\n"); // System.String
+                Console.WriteLine(s.GetType() + "\n\n\n"); // System.String
             }
             /*============================================*/
 
             /* Predefined Value Types */
             /*============================================*/
-            {
-                Console.WriteLine($"NAME    |   .NET TYPE       |   DESCRIPTION            |   RANGE(MIN:MAX)");
-                Console.WriteLine($"sbyte   |   System.SByte    |   8-bit signed integer   |   {sbyte.MinValue}:{sbyte.MaxValue}");
-                Console.WriteLine($"short   |   System.Int16    |   16-bit signed integer  |   {short.MinValue}:{short.MaxValue}");
-                Console.WriteLine($"int     |   System.Int32    |   32-bit signed integer  |   {int.MinValue}:{int.MaxValue}");
-                Console.WriteLine($"long    |   System.Int64    |   64-bit signed integer  |   {long.MinValue}:{long.MaxValue}");
-                Console.WriteLine($"byte    |   System.Byte     |   8-bit signed integer   |   {byte.MinValue}:{byte.MaxValue}");
-                Console.WriteLine($"ushort  |   System.UInt16   |   16-bit signed integer  |   {ushort.MinValue}:{ushort.MaxValue}");
-                Console.WriteLine($"uint    |   System.UInt32   |   32-bit signed integer  |   {uint.MinValue}:{uint.MaxValue}");
-                Console.WriteLine($"ulong   |   System.UInt64   |   64-bit signed integer  |   {ulong.MinValue}:{ulong.MaxValue}");
+            {                
+                List<string> types = new List<string> {
+                    $"NAME    |   .NET TYPE       |   DESCRIPTION            |   RANGE(MIN:MAX)",
+                    $"sbyte   |   System.SByte    |   8-bit signed integer   |   {sbyte.MinValue}:{sbyte.MaxValue}",
+                    $"short   |   System.Int16    |   16-bit signed integer  |   {short.MinValue}:{short.MaxValue}",
+                    $"int     |   System.Int32    |   32-bit signed integer  |   {int.MinValue}:{int.MaxValue}",
+                    $"long    |   System.Int64    |   64-bit signed integer  |   {long.MinValue}:{long.MaxValue}",
+                    $"byte    |   System.Byte     |   8-bit signed integer   |   {byte.MinValue}:{byte.MaxValue}",
+                    $"ushort  |   System.UInt16   |   16-bit signed integer  |   {ushort.MinValue}:{ushort.MaxValue}",
+                    $"uint    |   System.UInt32   |   32-bit signed integer  |   {uint.MinValue}:{uint.MaxValue}",
+                    $"ulong   |   System.UInt64   |   64-bit signed integer  |   {ulong.MinValue}:{ulong.MaxValue}"
+                };
+
+                Console.WriteLine(types[1] + "\n");
+
+                for (int i = 0; i < types.Count; i++)
+                {
+                    Console.WriteLine(types[i]);
+                }
             }
             /*============================================*/
         }
