@@ -136,7 +136,8 @@ namespace CoreCSharp
             /* Predefined Value Types */
             /*============================================*/
             {                
-                List<string> types = new List<string> {
+                List<string> types = new List<string>
+                {
                     $"NAME    |   .NET TYPE       |   DESCRIPTION            |   RANGE(MIN:MAX)",
                     $"sbyte   |   System.SByte    |   8-bit signed integer   |   {sbyte.MinValue}:{sbyte.MaxValue}",
                     $"short   |   System.Int16    |   16-bit signed integer  |   {short.MinValue}:{short.MaxValue}",
