@@ -157,28 +157,21 @@ namespace TypeSystemInCsharp
             // Generic Types
             List<string> stringList = new List<string>();
             stringList.Add("String example");
-            // compile time error adding a type other than a string
+            stringList.Add("Another string example");
+            for (int i = 0; i < stringList.Count; i++)
+                Console.WriteLine(stringList[i]);
+
+            // compile time error adding a type other than a string:
             // stringList.Add(4);
 
-            {
-                // Implicit types, anonymous types, and nullable value types
-                // i is compiled as an int
-                var i = 5;
+            // Compile-time type and run-time type
+            string message = "This is a string of characters";
+            object anotherMessage = "This is another string of characters";
+            IEnumerable<char> someCharacters = "abcdefghijklmnopqrstuvwxyz";
 
-                // s is compiled as a string
-                var str = "C# implicit types, anonymous types, and nullable value types";
-
-                // a is compiled as int[]
-                var a = new[] { 0, 1, 2 };
-
-                // expr is compiled as IEnumerable<Customer>
-                // or perhaps IQueryable<Customer>
-                var customers = new[] {""};
-                var expr =
-                    from c in customers
-                    where c.City == "London"
-                    select c;
-            }
+            Console.WriteLine(message + " and its type: " + message.GetType()); // This is a string of characters and its type: System.String
+            Console.WriteLine(anotherMessage + " and its type: " + anotherMessage.GetType()); // This is another string of characters and its type: System.String
+            Console.WriteLine(someCharacters + " and its type: " + someCharacters.GetType()); // abcdefghijklmnopqrstuvwxyz and its type: System.String
 
 
         }
