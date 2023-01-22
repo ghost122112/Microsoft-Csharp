@@ -24,7 +24,13 @@ namespace Overview
                 """;
             Console.WriteLine(triangle + "\nThis is triangle :)");
 
-            OverviewClass overview = new OverviewClass("This is the message that was written as the parameter of the overview object using class OverviewClass");
+            OverviewClass overview = new OverviewClass("""
+
+                =================================
+                         1.1. Overview           
+                =================================
+
+                """);
             
 
             Console.ReadKey(true);
@@ -47,3 +53,4 @@ namespace SourceCode
         }
     }
 }
+
