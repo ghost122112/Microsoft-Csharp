@@ -1,4 +1,5 @@
 ﻿using System;
+using SourceCode;
 
 namespace Overview
 {
@@ -23,6 +24,8 @@ namespace Overview
                 """;
             Console.WriteLine(triangle + "\nThis is triangle :)");
 
+            OverviewClass overview = new OverviewClass("This is the message that was written as the parameter of the overview object using class OverviewClass");
+            
 
             Console.ReadKey(true);
         }
@@ -31,8 +34,16 @@ namespace Overview
 
 namespace SourceCode
 {
-    public class Overview
+    public class OverviewClass
     {
-
+        private string _message { get; set; }
+        public OverviewClass(string message)
+        {
+            _message = message;
+            Console.WriteLine($"""
+                
+                {message}
+                """);
+        }
     }
 }
