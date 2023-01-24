@@ -2,6 +2,7 @@
 using SourceCode;
 using Discards;
 using System.Globalization;
+using System.Runtime.CompilerServices;
 
 namespace Discrads
 {
@@ -51,7 +52,7 @@ namespace SourceCode
 
                 Console.WriteLine($"Population change, 1960 to 2010: {pop2 - pop1:N0}");
 
-                static (string, double, int, int, int, int) QueryCityDataForYears(string name, int year1, int year2)
+                static async (string, double, int, int, int, int) QueryCityDataForYears(string name, int year1, int year2)
                 {
                     int population1 = 0, population2 = 0;
                     double area = 0;
@@ -212,6 +213,6 @@ namespace Discards
             city = City;
             state = State;
         }
-
     }
 }
+
